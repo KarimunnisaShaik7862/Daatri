@@ -1,0 +1,95 @@
+.HomePage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* Cover the entire vertical height */
+}
+
+.form-heading {
+  position: absolute;
+  top: 50px; /* Distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust centering */
+  max-width: 100%; /* Adjusted width */
+  text-align: center; /* Center-align text */
+  z-index: 3; /* Ensure it's above other elements */
+}
+
+.form-heading h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #ff66b2; /* Example color */
+}
+
+.form-heading p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.user-form {
+  width: 20%;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  margin-left: 50px; /* Adjusted margin */
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 80%; /* Adjusted width to fill the form */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #fa08a5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #cccccc;
+}
+
+.right-image-container {
+  position: relative;
+  width: 50%; /* Adjust the width as needed */
+  overflow: hidden;
+  height: 80%; /* Maintain aspect ratio */
+  margin-left: auto; /* Align to the right side */
+  margin-right: 20px; /* Move the image a bit to the left */
+  display: flex;
+  justify-content: flex-end; /* Align content to the right */
+}
+
+.right-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  z-index: 2;
+  position: relative;
+  border-radius: 100%; /* Circular shape */
+  /* For amoeba shape, use: */
+  /* border-radius: 50% 40% 60% 30% / 30% 60% 40% 50%; */
+}
