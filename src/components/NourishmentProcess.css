@@ -1,0 +1,26 @@
+.nourishment-process {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 10px; /* Padding for mobile devices */
+}
+
+.nourishment-process h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: navy; /* Navy blue color for title */
+}
+
+.nourishment-process p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0); /* Black color for paragraph text */
+}
+
+.nourishment-image {
+  width: 100%;
+  max-width: 800px; /* Fit image across devices */
+  height: auto;
+  margin-top: 0px; /* Reduced gap */
+  border-radius: 10px;
+}

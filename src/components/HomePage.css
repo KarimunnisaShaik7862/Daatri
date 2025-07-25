@@ -1,95 +1,176 @@
-.HomePage {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px;
-  background-color: white;
-  position: relative;
-  overflow: hidden;
-  height: 100vh; /* Cover the entire vertical height */
+/* General Homepage Container */
+.homepage-container {
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
 }
 
-.form-heading {
-  position: absolute;
-  top: 50px; /* Distance from the top */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust centering */
-  max-width: 100%; /* Adjusted width */
-  text-align: center; /* Center-align text */
-  z-index: 3; /* Ensure it's above other elements */
-}
-
-.form-heading h1 {
-  font-size: 2.5em;
-  margin-bottom: 10px;
-  color: #ff66b2; /* Example color */
-}
-
-.form-heading p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
+/* Heading and Description */
+.homepage-heading {
+  font-size: 2.5rem;
   color: #333;
+  margin-bottom: 10px;
 }
 
-.user-form {
-  width: 20%;
-  background-color: white;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 2;
-  margin-left: 50px; /* Adjusted margin */
-}
-
-.form-group {
+.homepage-matter {
+  font-size: 1.2rem;
+  color: #922121;
   margin-bottom: 20px;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
+/* Content Section */
+.content-container {
+  margin-bottom: 20px;
 }
 
-.form-group input {
-  width: 80%; /* Adjusted width to fill the form */
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-
-button {
-  background-color: #fa08a5;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:disabled {
-  background-color: #cccccc;
-}
-
-.right-image-container {
+/* Image Slider Container */
+.images-container {
   position: relative;
-  width: 50%; /* Adjust the width as needed */
-  overflow: hidden;
-  height: 80%; /* Maintain aspect ratio */
-  margin-left: auto; /* Align to the right side */
-  margin-right: 20px; /* Move the image a bit to the left */
   display: flex;
-  justify-content: flex-end; /* Align content to the right */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 30px;
 }
 
-.right-image {
+.homepage-image {
   width: 100%;
-  height: auto;
+  height: 40%;
   object-fit: cover;
-  z-index: 2;
-  position: relative;
-  border-radius: 100%; /* Circular shape */
-  /* For amoeba shape, use: */
-  /* border-radius: 50% 40% 60% 30% / 30% 60% 40% 50%; */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(178, 3, 3, 0.1);
+}
+
+/* Arrows for Image Navigation */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  font-size: 1.5rem;
+}
+
+.prev-arrow {
+  left: 10px;
+}
+
+.next-arrow {
+  right: 10px;
+}
+
+.arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Hunger Section */
+.hunger-container {
+  margin-top: 30px;
+}
+
+/* About Us Section */
+.about-us-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.about-image {
+  flex: 1;
+  width: 50%; /* Left-aligned image with 50% width */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.about-text-container {
+  flex: 1;
+  text-align: left; /* Right-align text */
+}
+
+.about-heading {
+  text-align: left; /* Right-align About Us heading */
+  margin-bottom: 20px; /* Space below the heading */
+  color:navy;
+}
+
+.about-text {
+  font-size: 1.1em;
+  line-height: 1.6;
+  text-align: left; /* Right-align paragraph text */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .homepage-heading {
+    font-size: 2rem;
+  }
+
+  .homepage-matter {
+    font-size: 1rem;
+  }
+
+  .homepage-image {
+    height: 200px;
+  }
+
+  .arrow {
+    font-size: 1.2rem;
+  }
+
+  .about-us-section {
+    flex-direction: column;
+  }
+
+  .about-image {
+    order: -1;
+    margin-bottom: 20px;
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .about-text-container {
+    padding-left: 0;
+  }
+
+  .about-text {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .homepage-heading {
+    font-size: 1.5rem;
+  }
+
+  .homepage-matter {
+    font-size: 0.9rem;
+  }
+
+  .homepage-image {
+    height: 150px;
+  }
+
+  .arrow {
+    font-size: 1rem;
+  }
+
+  .about-text {
+    font-size: 0.9em;
+  }
+}
+
+/* Specific Styling for Image Slider */
+.image-slider {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image-slider img {
+  max-width: 100%;
+  height: auto;
 }

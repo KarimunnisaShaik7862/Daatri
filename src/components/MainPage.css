@@ -1,0 +1,18 @@
+/* src/components/MainPage.css */
+.main-page {
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+  
+  .main-content {
+    background: rgba(0, 0, 0, 0.5); /* Optional: darken background for text visibility */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  

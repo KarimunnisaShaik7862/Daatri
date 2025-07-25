@@ -1,83 +1,75 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+// HomePage.js
+import React, { useState, useEffect } from 'react';
 import './HomePage.css';
-import image from './image1.png';
+import Hunger from './Hunger';
+import TheProblem from './TheProblem';
+import NourishmentProcess from './NourishmentProcess';
+import Counter from './Counter';
+import Footer from './Footer'; // Added Footer import
 
-function HomePage() {
-    const initialFormData = {
-        name: '',
-        email: '',
-        dateOfBirth: '',
-        phoneNumber: '',
-        whatsappNumber: '',
-        bloodGroup: ''
-    };
+// Import images
+import img1 from './1.jpg';
+import img2 from './2.jpg';
+import img3 from './3.jpg';
+import img4 from './4.jpg';
+import aboutImage from './about.jpg';
 
-    const [formData, setFormData] = useState(initialFormData);
-    const [submitting, setSubmitting] = useState(false);
+const HomePage = () => {
+  const images = [img1, img2, img3, img4];
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [images.length]);
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        setSubmitting(true);
+  return (
+    <div className="homepage-container">
+      {/* Image Slider */}
+      <div className="image-slider">
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex + 1}`} />
+      </div>
 
-        try {
-            const response = await axios.post('http://localhost:5000/api/users', formData);
-            console.log(response.data);
-            alert('User details submitted successfully');
-            setFormData(initialFormData);
-        } catch (error) {
-            console.error('There was an error submitting the form!', error);
-            alert('Failed to submit user details. Please try again.');
-        } finally {
-            setSubmitting(false);
-        }
-    };
-
-    return (
-        <div className="HomePage">
-            <div className="form-heading">
-                <h1>Join Our Mission</h1>
-                <p>Register today to be a part of our initiative to help the needy. Together, we can make a difference.</p>
-            </div>
-            <form className="user-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label>Name:</label>
-                    <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label>Email:</label>
-                    <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label>Date of Birth:</label>
-                    <input type="date" name="dateOfBirth" value={formData.dateOfBirth} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label>Phone Number:</label>
-                    <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
-                </div>
-                <div className="form-group">
-                    <label>WhatsApp Number:</label>
-                    <input type="text" name="whatsappNumber" value={formData.whatsappNumber} onChange={handleChange} required />
-                </div>
-                <button type="submit" disabled={submitting}>Submit</button>
-                {submitting && <p>Submitting...</p>}
-            </form>
-            <div className="right-image-container">
-                <div className="shape shape-1"></div>
-                <div className="shape shape-2"></div>
-                <img src={image} alt="Children" className="right-image" />
-                <div className="shape shape-3"></div>
-            </div>
+      {/* About Us Section */}
+      <div className="about-us-section">
+        <img src={aboutImage} alt="About Us" className="about-image" />
+        <div className="about-text-container">
+          <h2 className="about-heading">About Us</h2>
+          <p className="about-text">
+            We envision a world where birthdays are celebrated by giving back and spreading kindness to those in need. Our mission is to transform the joy of birthdays into an opportunity for positive change. By connecting generous individuals with underprivileged communities, we ensure that birthday donations provide essential resources like food and clothing to those who need them most.
+          </p>
+          <p className="about-text">
+            Our platform encourages individuals to reimagine their birthday celebrations as a way to make a lasting impact on those less fortunate. We believe that by turning personal milestones into moments of giving, we can foster a culture of empathy and gratitude. Each birthday donation not only addresses immediate needs but also contributes to long-term development, offering education, healthcare, and support for sustainable living.
+          </p>
         </div>
-    );
-}
+      </div>
+
+      {/* Insert TheProblem Component */}
+      <div className="problem-container">
+        <TheProblem />
+      </div>
+
+      {/* Insert Hunger Component */}
+      <div className="hunger-container">
+        <Hunger />
+      </div>
+
+      {/* Insert NourishmentProcess Component */}
+      <div className="nourishment-container">
+        <NourishmentProcess />
+      </div>
+
+      {/* Insert Counter Component */}
+      <div className="counter">
+        <Counter />
+      </div>
+
+      {/* Added Footer Component */}
+      <Footer />
+    </div>
+  );
+};
 
 export default HomePage;

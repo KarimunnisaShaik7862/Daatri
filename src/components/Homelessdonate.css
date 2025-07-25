@@ -1,0 +1,443 @@
+.donate-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.image-section {
+  width: 100%;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.homeless-image {
+  width: 100%;
+  height: 45vh;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.form-section {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.donate-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: green;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+  width: 90%;
+  padding: 16px 18px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 4px;
+  display: block;
+}
+
+.upload-section {
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.upload-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: navy;
+}
+
+.file-name-display {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.qr-code-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.qr-code-container h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.qr-code-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Modified verification container styles */
+.verification-container {
+  width: 100%;
+  margin: 40px 0;
+}
+
+.verification-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.verification-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.verification-label {
+  color: navy;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.verification-label::after {
+  content: ":";
+}
+
+.verification-input {
+  width: 100%;
+  padding: 16px 18px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.verification-input:focus {
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+/* Modified captcha container styles */
+.captcha-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.captcha-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 15px;
+  gap: 5px;
+}
+
+.captcha-label {
+  color: navy;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.captcha-label::after {
+  content: ":";
+}
+
+.captcha-display {
+  font-family: 'Courier New', monospace;
+  font-size: 18px;
+  letter-spacing: 3px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  user-select: none;
+  width: 120px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-left: 5px;
+}
+
+.error-message-container {
+  min-height: 20px;
+  margin-top: 8px;
+}
+
+/* Upload section styling */
+.upload-section {
+  margin: 60px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upload-section label {
+  color: navy;
+  font-weight: 500;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.file-input-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.file-input-container input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.file-input-button {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-input-button:hover {
+  background-color: #218838;
+}
+
+.file-name {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #666;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Modified button styling */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  transition: background-color 0.3s ease;
+  border-radius: 25px;
+  padding: 12px 20px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 90px;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 90px;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+@media (max-width: 768px) {
+  .verification-row {
+    flex-direction: column;
+  }
+  
+  .verification-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .captcha-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .captcha-display {
+    margin-top: 10px;
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .back-btn, .submit-btn {
+    width: 100%;
+  }
+}
+
+.processing-indicator {
+  color: navy;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+/* Styling for the spinner icon during processing */
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.processing-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  padding: 8px;
+  border-radius: 4px;
+  border-left: 3px solid #007bff;
+}
+
+/* Payment app detection styling */
+.detected-app {
+  margin: 10px 0;
+  padding: 8px;
+  background-color: #e8f4ff;
+  border-radius: 4px;
+  color: #0066cc;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.screenshot-type {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 0.85rem;
+  color: #ff9800;
+  font-style: italic;
+}
+
+/* Transaction ID extraction message styling */
+.extraction-message {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #28a745;
+  padding: 5px 0;
+}
+
+/* Paytm Type2 message style */
+.paytm-type2-message {
+  color: #ff5722;
+  font-weight: 500;
+}
+
+/* Highlight input when it has a value autofilled */
+.verification-input.has-value {
+  border-color: #28a745;
+  background-color: #f8fff8;
+}
+
+/* Improved error message styling */
+.error-message-container {
+  margin-top: 5px;
+  padding: 5px 0;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+}
+
+/* Better spacing in verification container */
+.verification-container {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .verification-column {
+    flex: 100%;
+  }
+  
+  .verification-row {
+    flex-direction: column;
+  }
+}

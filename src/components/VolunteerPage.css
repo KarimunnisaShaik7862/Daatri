@@ -1,0 +1,123 @@
+.volunteer-container {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.volunteer-image-full {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.volunteer-heading {
+    margin-top: 10px;
+    color: green;
+}
+
+.content-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 15px;
+}
+
+.text-content {
+    flex: 1;
+    text-align: left;
+    padding-right: 15px;
+}
+
+.volunteer-image-side {
+    width: 350px;
+    height: auto;
+    max-width: 100%;
+    margin: 0 auto 10px;
+    display: block;
+    border-radius: 8px;
+}
+
+.form-layout {
+    flex: 1;
+    border: 2px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+.volunteer-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.volunteer-form input,
+.volunteer-form select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    height: 40px;
+}
+
+.volunteer-form input[type="tel"] {
+    border-radius: 15px;
+    width: calc(100% - 20px); /* Adjust width for laptop view */
+}
+
+.volunteer-form button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+
+.volunteer-form button:hover {
+    background-color: #218838;
+}
+
+@media (max-width: 768px) {
+    .content-layout {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .volunteer-image-side {
+        width: 100%;
+        max-width: none;
+    }
+
+    .volunteer-form {
+        grid-template-columns: 1fr;
+    }
+
+    .volunteer-form input,
+    .volunteer-form select,
+    .volunteer-form button {
+        width: 100%;
+    }
+
+    .volunteer-form input[type="tel"] {
+        border-radius: 15px;
+    }
+
+    .volunteer-form button {
+        border-radius: 50px;
+    }
+
+    .volunteer-image-full {
+        width: 100%;
+    }
+}

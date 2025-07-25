@@ -1,0 +1,102 @@
+.donation-section {
+  text-align: center;
+  padding: 50px;
+  background-color: #f5f5f5;
+  
+}
+
+.donation-section h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: navy;
+}
+
+.donation-section p {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+}
+
+.donation-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the boxes */
+  gap: 10px; /* Reduce gap between boxes */
+}
+
+.donation-option {
+  background-color: white;
+  border-radius: 10px;
+  flex-basis: calc(50% - 20px); /* Adjust width to allow two boxes side by side */
+  max-width: 250px; /* Ensures each box doesn’t exceed 250px width */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px; /* Adjust this value as needed */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Keep space between elements */
+  align-items: center; /* Center items horizontally */
+  box-shadow: 8px 8px 15px rgba(0, 0, 255, 0.2), /* Outset shadow in blue */
+              inset 4px 4px 10px rgba(8, 209, 8, 0.3); /* Inset shadow in green */
+}
+
+.donation-option img {
+  width: 200px; /* Increased image size to fit better */
+  height: 200px; /* Increased image size to fit better */
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.donation-option h2 {
+  font-size: 1.5em;
+  color:navy;
+  margin-bottom: 5px; /* Adjusted margin for spacing */
+}
+
+.donation-option p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 5px; /* Adjusted margin for spacing */
+  
+}
+
+.donation-option .info-line {
+  font-size: 0.9em;
+  color: #333; /* Adjust color as needed */
+  margin-bottom: 15px; /* Space before the donate button */
+}
+
+.donation-option a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007b5e;
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: auto; /* Align buttons at the bottom of the box */
+}
+
+.donation-option a:hover {
+  background-color: #005a40;
+}
+
+.donation-option:hover {
+  transform: scale(1.05);
+  box-shadow: 12px 12px 20px rgba(0, 0, 255, 0.4), /* Outset shadow in blue */
+              inset 6px 6px 15px rgba(0, 255, 0, 0.5); /* Inset shadow in green */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .donation-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  .donation-option {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: auto; /* Remove height restriction for smaller screens */
+  }
+}

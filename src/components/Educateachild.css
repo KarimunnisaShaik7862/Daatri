@@ -1,0 +1,241 @@
+.donate-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.image-section {
+  width: 100vw;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+
+.educate-child-image {
+  width: 100vw;
+  height: 60vh;  /* Changed from 100vh to 60vh */
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .educate-child-image {
+    height: 40vh;  /* Changed from 50vh to 40vh */
+  }
+}
+
+.form-section {
+  width: 100%;
+  padding: 0 20px;
+}
+
+.donate-form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 30px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.05);
+  max-width: 1100px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: green;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"] {
+  width: 90%;
+  padding: 16px 18px;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 25px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+input[type="tel"] {
+  border-radius: 25px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+  box-shadow: 0 0 8px rgba(40, 167, 69, 0.5);
+  outline: none;
+}
+
+.rounded-input {
+  border-radius: 8px !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 4px;
+  display: block;
+}
+
+.upload-section {
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+}
+
+.upload-section label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.file-name-display {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.qr-code-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.qr-code-container h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.qr-code-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.captcha-container {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.captcha-section {
+  text-align: center;
+  margin: 30px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.captcha-display {
+  font-family: 'Courier New', monospace;
+  font-size: 20px;
+  letter-spacing: 3px;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+  margin: 10px auto;
+  user-select: none;
+  width: 150px;
+  text-align: center;
+}
+
+.captcha-section input {
+  width: 150px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.captcha-input {
+  width: 50%;
+  max-width: 200px;
+}
+
+.captcha-container .captcha-display {
+  max-width: 150px;
+  text-align: center;
+  padding: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.back-btn {
+  background-color: #6c757d;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #5a6268;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.confirm-btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.confirm-btn:hover {
+  background-color: #45a049;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: 5px;
+  display: block;
+}

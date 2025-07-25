@@ -1,0 +1,72 @@
+/* Full-screen image at the top */
+.hero-image img {
+    width: 100%;
+    height: 100vh; /* Full screen height */
+    object-fit: cover;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+  }
+  
+  h1.main-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: 'Arial Black', sans-serif;
+  }
+  
+  .section-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+  }
+  
+  .section-text {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .section-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 15px;
+  }
+  
+  .section-image {
+    flex: 0 0 45%;
+    align-items: flex-start;
+    height: 450px; /* Fixed height for stability */
+    overflow: hidden; /* Ensure no overflow */
+  }
+  
+  /* Increased size for Our Motive image */
+  .section-image img {
+    width: 100%;
+    height: 100%; /* Fill the container height */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  .motive-image {
+    width: 100%; /* Ensure it takes full width */
+    height: 400px; /* Specific height for the motive image */
+    object-fit: cover; /* Maintain aspect ratio */
+  }
+  
+  @media (max-width: 768px) {
+    .section-row {
+      flex-direction: column;
+    }
+  
+    .section-image {
+      margin-top: 20px;
+      height: auto; /* Allow height to adjust on small screens */
+    }
+  }

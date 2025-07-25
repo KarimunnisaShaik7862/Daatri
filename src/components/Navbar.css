@@ -1,56 +1,217 @@
-.navbar {
-  background-color: white;
-  padding: 15px 30px;
+/* Top Bar */
+.topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: #06324b;
+  color: rgb(0, 0, 0);
+  padding: 0px;
 }
 
-.navbar-logo h1 {
-  margin: 0;
+.topbar-left a {
+  color: rgb(223, 211, 211);
+  margin-right: 15px;
+  font-size: 20px;
+  text-decoration: none; /* Removes underline */
+  position: relative;
+}
+
+.topbar-left a:hover,
+.topbar-left a.active { /* Added active state for mobile */
+  color: rgb(223, 211, 211);
+}
+
+.topbar-left a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 5px;
+  background-color: rgb(53, 170, 20);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.topbar-left a:hover::after,
+.topbar-left a.active::after { /* Added active state for mobile */
+  transform: scaleX(1);
+}
+
+.topbar-right {
+  margin-right: 20px;
+  color: red;
+}
+
+.topbar-right .topbar-item {
+  color: white;
+  font-size: 20px;
+  text-decoration: none; /* Removes underline */
+  margin-left: 15px;
+  position: relative;
+}
+
+.topbar-right .topbar-item:hover,
+.topbar-right .topbar-item.active { /* Added active state for mobile */
+  color: rgb(3, 255, 95);
+}
+
+.topbar-right .topbar-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 4px;
+  background-color: rgb(242, 242, 242);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.topbar-right .topbar-item:hover::after,
+.topbar-right .topbar-item.active::after { /* Added active state for mobile */
+  transform: scaleX(1);
+  animation: pulse 0.6s ease infinite alternate;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1.1);
+  }
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(143, 58, 58);
+  padding: 10px;
+  position: relative;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  margin-left: 30px; /* Added left margin for spacing */
+}
+
+.logo-image {
+  height: 60px;
+  width: auto;
+}
+
+.navbar-toggle {
   font-size: 24px;
-  color: #333;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  display: none;
 }
 
 .navbar-menu {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .navbar-menu li {
   margin-left: 20px;
+  position: relative; /* Required for the border effect */
 }
 
 .navbar-menu li a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px;
-  transition: color 0.3s ease;
+  color: rgb(4, 45, 88);
+  text-decoration: none; /* Ensure no underline */
+  transition: color 0.3s ease, border-color 0.3s ease; /* Smooth color transition */
+  padding: 5px; /* Padding for better click area */
 }
 
-.navbar-menu li a:hover {
-  color: #fa08a5; /* Change to your preferred hover color */
+/* Change color on hover */
+.navbar-menu li a:hover,
+.navbar-menu li a.active { /* Added active state for mobile */
+  color: rgb(11, 120, 49); /* Change color on hover */
 }
 
+/* Border fade and grow effect */
+.navbar-menu li::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: rgb(8, 255, 49);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navbar-menu li:hover::after,
+.navbar-menu li.active::after { /* Added active state for mobile */
+  width: 100%;
+  left: 0;
+}
+
+/* Responsive styling */
 @media (max-width: 768px) {
-  .navbar-menu {
+  .navbar {
     flex-direction: column;
-    align-items: center;
-    display: none;
+    align-items: flex-start;
   }
 
-  .navbar-menu li {
-    margin: 10px 0;
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    margin-left: 30px; /* Added left margin for spacing */
+  }
+  
+  .logo-image {
+    height: 60px; /* Normal size for phones */
+    width: auto;
+  }
+
+  .navbar-toggle {
+    display: block;
+    align-self: flex-end;
+  }
+
+  .navbar-menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    border-top: 1px solid #ddd;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 1000;
   }
 
   .navbar-menu.active {
     display: flex;
   }
 
-  .navbar {
-    flex-direction: column;
+  .navbar-menu li {
+    margin-left: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  .navbar-menu li a {
+    padding: 10px;
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .logo-image {
+    height: 80px; /* Increased size for laptops */
+    width: auto;
   }
 }
